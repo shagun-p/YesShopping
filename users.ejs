@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #backButton {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  <meta charset="utf-8">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+  <h1>Users</h1>
+  <% if (items.length == 0) { %>
+    <p>Your wishlist items will be displayed here</p>
+  <% } else { %>
+    <ul>
+      <% items.forEach((item) => { %>
+        <tr>
+         <h1><%= item.username %><br/></h1>
+         <%= item.password %><br/>
+      </tr>
+      <% }); %>   
+    </ul>
+  <% } %>  
+</body>
+</html>
+

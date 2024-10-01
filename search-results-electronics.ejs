@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+<ul>
+    <% electronics.forEach((electronic) => { %>
+      <li>
+        <h2><%= electronic.company %></h2>
+        <p><%= electronic.description %></p>
+        <p><%= electronic.price %></p>
+        <p><img src="<%= electronic.imageAddress %>" alt=""></p>
+      </li>
+    <% }); %>
+  </ul>

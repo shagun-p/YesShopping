@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        #backButton {
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+      </style>
+    <title>About Us</title>
+  </head>
+  <body>
+    <%- include('loginDashboard') %>
+  </body>
+  <body style="text-align:center;">
+    <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+    <h1>About Us</h1>
+    <p>We are a small eCommerce store that sells a variety of products, including clothing, electronics, and household items.</p>
+    <p>Our mission is to provide our customers with high-quality products at affordable prices, while also offering excellent customer service.</p>
+    <p><strong>Thank you for choosing us as your shopping destination!</strong></p>
+  </body>
+</html>

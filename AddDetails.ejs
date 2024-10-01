@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Details</title>
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .column {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          #backButton {
+            position: fixed;
+            top: 0;
+            left: 0;
+          }
+        </style>
+        <meta charset="utf-8">
+        <title>Shopping Cart</title>
+      </head>
+      <body>
+        <button id="backButton">Back</button>
+        <script>
+          document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+          });
+        </script>
+        <h1>Shopping Cart</h1>
+        <% if (items.length === 0) { %>
+          <p>Your cart is empty</p>
+        <% } else { %>
+          <ul>
+            <% var total = 0; %>
+            <% var item; %>
+            <% items.forEach((i) => {
+              item = i; %>
+              <tr>
+               <h1><%= item.product_name %></h1>
+               <%= "QUANTITY-" + item.quantity %><br/>
+               <%= "PRICE-" + item.product_price.toFixed(2) %><br/>
+            </tr>
+            <% total += parseFloat(item.product_price); %>
+            <% }); %>   
+          </ul>
+        <% } %>
+        <tr>
+          <h1>Total Amount to pay: <%= total %></h1>
+        </tr>
+      </body>
+      </html>
+    </div>
+    <div class="column">
+      <h3>Shipping Information</h3>
+      <!-- <form action="/AddDetails?total=<%= total %>&productName=<%= item.product_name %>&productPrice=<%= item.product_price %>&quantity=<%= item.quantity %>" method="post" asp-action="PlaceOrder"> -->
+        <form action="/AddDetails/<%= total %>" method="post">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+              <label for="address">Address</label>
+              <textarea class="form-control" id="address" name="address" required></textarea>
+          </div>
+          <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" name="city" required>
+          </div>
+          <div class="form-group">
+              <label for="state">State</label>
+              <input type="text" class="form-control" id="state" name="state" required>
+          </div>
+          <div class="form-group">
+              <label for="zip">Zip Code</label>
+              <input type="text" class="form-control" id="zip" name="zip" required>
+          </div>
+          <h3>Payment Information</h3>
+          <div class="form-group">
+              <label for="name_on_card">Name on Card</label>
+              <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
+          </div>
+          <div class="form-group">
+              <label for="cardno">Card Number</label>
+              <input type="text" class="form-control" id="cardno" name="cardno" required>
+          </div>
+          <div class="form-group">
+              <label for="exp_month">Expiration Month</label>
+              <input type="text" class="form-control" id="exp_month" name="exp_month" required>
+          </div>
+          <div class="form-group">
+              <label for="exp_year">Expiration Year</label>
+              <input type="text" class="form-control" id="exp_year" name="exp_year" required>
+          </div>
+          <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input type="text" class="form-control" id="cvv" name="cvv" required>
+          </div>
+     
+          <div class="form-group">
+              <label for="card_type">Card Type</label>
+              <select class="form-control" id="card_type" name="card_type" required>
+                  <option value="Visa">Visa</option>
+                  <option value="Mastercard">Mastercard</option>
+                  <option value="American Express">American Express</option>
+              </select>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+          <% items.forEach((i) => {
+            item = i; %>
+        <input type="hidden" name="quantity" value="<%= item.quantity %>">
+        <input type="hidden" name="productPrice" value="<%= item.product_price %>">
+        <input type="hidden" name="productName" value="<%= item.product_name %>">
+        <% }); %>   
+      </form>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+

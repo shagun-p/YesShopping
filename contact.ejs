@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        #backButton {
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+      </style>
+      <body>
+        <%- include('loginDashboard'); %>
+      </body>
+    <title>Contact Us</title>
+  </head>
+  <body style="text-align:center;">
+    <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+    <h1>Contact Us</h1>
+    <p>For any queries or feedback, please use the following details:</p>
+    <ul>
+      Email: shagunpachisia07@gmail.com
+      Phone: +91-7292023376
+      Address: 81 Sector-22, Faridabad, Haryana , India
+    </ul>
+  </body>
+</html>
+
+
+
+

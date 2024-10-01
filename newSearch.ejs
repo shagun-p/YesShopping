@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Listview Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(() => {
+      $('#search-input').on('input', () => {
+        const searchTerm = $('#search-input').val();
+
+        $.get(`/search?q=${searchTerm}`, (data) => {
+          let html = '';
+
+          data.forEach((row) => {
+            html += `<li>${row.name}</li>`;
+          });
+
+          $('#results').html(html);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Listview Search</h1>
+  <input type="text" id="search-input">
+  <ul id="results"></ul>
+</body>
+</html>

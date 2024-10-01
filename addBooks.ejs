@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Product</title>
+  </head>
+  <body>
+    <form action="/addBooks" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      
+      <label for="description">description:</label>
+      <textarea type="text" id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+      
+      <label for="price">price:</label><br>
+      <input id="price" name="price" required><br><br>
+
+      <label for="imageAddress">Image Address:</label>
+		  <input type="text" id="imageAddress" name="imageAddress" required>
+
+      <br></br>
+      
+    <input type="submit" value="Add Book">
+    </form>
+  </body>
+</html>

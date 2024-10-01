@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #backButton {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      #pay {
+        background-color: blue;
+      }
+    </style>
+    <title>Payment Gateway</title>
+  </head>
+  <body>
+    <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+    <h1>Welcome to payment gateway</h1>
+    <form action="/payment" method="post">
+      <button id="pay" type="submit">Pay With Card</button>
+    </form>
+  </body>
+</html>
+

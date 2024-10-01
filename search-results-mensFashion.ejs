@@ -1,0 +1,12 @@
+<h1>Search Results</h1>
+<ul>
+    <% mensFashion.forEach((fashion) => { %>
+      <li>
+        <h2><%= fashion.brand %></h2>
+        <p><%= fashion.size %></p>
+        <p><%= fashion.description %></p>
+        <p><%= fashion.size %></p>
+        <p><img src="<%= fashion.imageAddress %>" alt=""></p>
+      </li>
+    <% }); %>
+  </ul>

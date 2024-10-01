@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #backButton {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  <meta charset="utf-8">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+  <h1>Wishlist</h1>
+  <% if (items.length == 0) { %>
+    <p>Your wishlist items will be displayed here</p>
+  <% } else { %>
+    <ul>
+      <% var total = 0; %>
+      <% items.forEach((item) => { %>
+        <tr>
+         <h1><%= item.product_name %><br/></h1>
+         <img src="<%= item.product_image %>" alt=""><br/>
+         <%= "QUANTITY-" + item.quantity %><br/>
+         <%= "PRICE-" + item.product_price.toFixed(2) %><br/>
+         <form method="get" action="/delete-from-wishlist/<%= item.product_id %>">
+          <input type="hidden" name="productImage">
+          <button type="submit">Remove from wishlist</button>
+        </form>
+      </tr>
+      <% total += parseFloat(item.product_price); %>
+      <!-- <tr>
+        <h1>Total Amount: <%= total %></h1>
+      </tr> -->
+      <!-- <form method="post" action="/add-to-cart">
+        <input type="hidden" name="productImage">
+        <input type="hidden" name="quantity">
+        <input type="hidden" name="productPrice">
+        <button type="submit">Proceed to add to Cart</button>
+      </form> -->
+      <form action="/add-to-cart" method="post">
+				<input type="hidden" name="productId" value="<%= item.product_id %>">
+				<input type="hidden" name="productName" value="<%= item.product_name %>">
+				<input type="hidden" name="productImage" value="<%= item.product_image %>">
+				<input type="hidden" name="productPrice" value="<%= item.product_price %>">
+				<input type="number" name="quantity" value="1" min="1">
+				<button type="submit">Add to cart</button>
+			  </form>
+      <% }); %>   
+    </ul>
+  <% } %>  
+</body>
+</html>
+

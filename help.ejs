@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <style>
+        #backButton {
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+      </style>
+      <body>
+        <%- include('loginDashboard'); %>
+      </body>
+    <title>My Shopping Store</title>
+  </head>
+  <body style="text-align:center;">
+    <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+    <h1>Welcome to My Shopping Store</h1>
+    <p>Shop for a variety of products, including clothing, electronics, and household items.</p>
+  </body>
+</html>

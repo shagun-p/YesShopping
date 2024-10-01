@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #backButton {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  <meta charset="utf-8">
+  <title>Shopping Cart</title>
+  <script src="../userpanel.js"></script>
+</head>
+<body>
+  <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+
+  <h1>Past orders</h1>
+  <% if (items.length == 0) { %>
+    <p>Your previous orders will be displayed here </p>
+  <% } else { %>
+    <ul>
+      <% var total = 0; %>
+      <% items.forEach((item) => { %>
+      <tr>
+        <h1>Your order items:</h1>
+         <p><%= "Name-" + item.name %></p><br/>
+         <%= "QUANTITY-" + item.quantity %><br/>
+          <%= "PRICE-" + item.price.toFixed(2) %><br/>
+      </tr>
+      <% }); %>  
+      
+    </ul>
+  <% } %>  
+</body>
+</html>
+

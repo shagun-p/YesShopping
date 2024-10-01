@@ -1,0 +1,25 @@
+<h1>Search Results</h1>
+<!-- <% if (books.length === 0) { %>
+  <p>No results found.</p>
+<% } 
+else { %>
+  <ul>
+    <% books.forEach((book) => { %>
+      <li>
+        <h2><%= book.name %></h2>
+        <p><%= book.description %></p>
+        <p><img src="<%= book.imageAddress %>" alt=""></p>
+      </li>
+    <% }); %>
+  </ul>
+<% } %> -->
+
+<ul>
+    <% books.forEach((book) => { %>
+      <li>
+        <h2><%= book.name %></h2>
+        <p><%= book.description %></p>
+        <p><img src="<%= book.imageAddress %>" alt=""></p>
+      </li> 
+    <% }); %> 
+  </ul>

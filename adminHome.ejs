@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+        #backButton {
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+      </style>
+	<title>Yes Shopping Admin Page</title>
+</head>
+<body style="text-align: center;">
+	<button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+	<h1><bold>Welcome to Yes Shopping Admin Page</bold></h1>
+	<p>Here you can manage your ecommerce website:</p>
+	
+		<li><a>Books</a></li>
+		    <button onclick="window.location.href = '/addBooks'">Add</button>
+			<button onclick="window.location.href = '/deleteBooks'">Delete</button>
+			<button onclick="window.location.href = '/updateBooks'">Update</button>
+		<li><a>Electronics</a></li>
+		    <button onclick="window.location.href = '/addElectronics'">Add</button>
+			<button onclick="window.location.href = '/deleteElectronics'">Delete</button>
+			<button onclick="window.location.href = '/updateElectronics'">Update</button>
+		<li><a>MensFashion</a></li>
+		    <button onclick="window.location.href = '/addMensFashion'">Add</button>
+			<button onclick="window.location.href = '/deleteMensFashion'">Delete</button>
+			<button onclick="window.location.href = '/updateMensFashion'">Update</button>
+<br>
+<br>
+			<button onclick="window.location.href = '/orderListForAdmin'">View all orders</button>
+			<button onclick="window.location.href = '/viewUsers'">View all users</button>
+
+</body>
+</html>

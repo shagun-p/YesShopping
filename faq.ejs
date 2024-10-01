@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <style>
+        #backButton {
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+      </style>
+      <body>
+        <%- include('loginDashboard'); %>
+      </body>
+    <title>My Shopping Store</title>
+  </head>
+  <body style="text-align:center;">
+    <button id="backButton">Back</button>
+  <script>
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+    <h1><strong>Frequently Asked Questions</strong></h1>
+    <p> 
+        <ol>1. What is your return policy?</ol>
+        <ol>Our return policy allows you to return items within 30 days of purchase for a full refund. Please contact our customer service team to initiate a return.</ol>
+        
+    </p>
+        
+    <p>
+        <ol>2. What payment methods do you accept?</ol>
+        <ol>We accept all major credit cards, including Visa, Mastercard, American Express and COD with minimum order condition</ol>     
+    </p>
+  </body>
+</html>
